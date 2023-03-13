@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 04:37:24 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/07 23:40:10 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:06:53 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void sort_two(t_data *stack)
     }
 }
 
+// Sorts a stack of 3 elements on stack A
 void sort_three(t_data *stack)
 {
     if (stack->stack_a[1] > stack->stack_a[0] && stack->stack_a[1] > stack->stack_a[2])
