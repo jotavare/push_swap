@@ -89,12 +89,58 @@ int get_index(int *arr, int size, int elem)
 void sort_radix(t_data *stack)
 {
     int min;
-    
+    int divide = 0;
+
     // Find minimum value in stack A
     min = find_min(stack->stack_a, stack->size_a);
 
     while (stack->size_a > 0)
     {
+        while (divide < 10)
+        {
+            // Push all values to stack B
+            while (stack->size_a > 0)
+            {
+                push_b(stack, 1);
+            }
+
+            // Sort stack B using bucket sort
+            while (stack->size_b > 0)
+            {
+                // Find bucket number
+                int bucket_num = (stack->stack_b[0] % (int)pow(10, divide + 1)) / (int)pow(10, divide);
+
+                // Find bucket size
+                int bucket_size = get_bucket_size(stack, bucket_num);
+
+                // Find bucket top
+                int bucket_top = get_bucket_top(stack, bucket_num);
+
+                // Push all values from bucket to stack A
+                int i = 0;
+                while (i < bucket_size)
+                {
+                    while (stack->stack_b[0] != bucket_top)
+                    {
+                        if (stack->stack_b[1] == bucket_top)
+                        {
+                            swap_b(stack, 1);
+                        }
+                        else if (get_index(stack->stack_b, stack->size_b, bucket_top) < (stack->size_b / 2))
+                        {
+                            rotate_b(stack, 1);
+                        }
+                        else
+                        {
+                            reverse_rotate_b(stack, 1);
+                        }
+                    }
+                    push_a(stack, 1);
+                    i++;
+                }
+            }
+            divide++;
+        }
 
         // Push minimum value to stack B
         while (stack->stack_a[0] != min)
