@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:28:45 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:57 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:14 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,13 @@ void	check_args(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ps_error("Error");
+			error_message("Error");
 		if (ft_contains(tmp, args, i) == 1)
-			ps_error("Error");
+			error_message("Error");
 		if (tmp < INT_MIN || tmp > 2147483647)
-			ps_error("Error");
+			error_message("Error");
 		i++;
 	}
 	if (argc == 2)
-		ps_free(args);
+		free_string(args);
 }

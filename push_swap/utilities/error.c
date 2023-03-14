@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:54:33 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:56 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:13 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 	Prints an error message and terminates the program.
 	*/
 
-void	ps_error(char *msg)
+void	error_message(char *msg)
 {
 	(void)msg;
 	write(2, "Error\n", 6);
@@ -27,7 +27,7 @@ void	ps_error(char *msg)
 	Frees the memory allocated for a string array.
 	*/
 
-void	ps_free(char **str)
+void	free_string(char **str)
 {
 	int	i;
 

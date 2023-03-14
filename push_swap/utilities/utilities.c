@@ -6,11 +6,33 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:28:37 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:57 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:18:32 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+	/*
+	This function calculates the distance between a given
+	index and the head of a linked list stack.
+	*/
+
+int	index_distance_head(t_list **stack, int index)
+{
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+}
 
 	/*
 	Finds and returns the minimum value in a linked

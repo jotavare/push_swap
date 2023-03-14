@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 23:58:38 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:05:02 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:15 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	index_stack(stack);
 	if (argc == 2)
 	{
-		ps_free(args);
+		free_string(args);
 	}
 }
 

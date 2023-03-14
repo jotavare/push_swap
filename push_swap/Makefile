@@ -6,7 +6,7 @@
 #    By: jotavare <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 01:22:30 by jotavare          #+#    #+#              #
-#    Updated: 2023/03/14 05:57:57 by jotavare         ###   ########.fr        #
+#    Updated: 2023/03/14 08:19:08 by jotavare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ SRCS =  ./algorithm/sort_small.c \
         ./functions/ft_strchr.c \
         ./functions/ft_strdup.c \
         ./functions/ft_substr.c \
-        ./operations/extra.c \
         ./operations/push.c \
         ./operations/reverse.c \
         ./operations/rotate.c \

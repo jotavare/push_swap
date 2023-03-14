@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:06:28 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:50 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:18:59 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,17 @@ long	ft_atoi(const char *str);
 int		ft_isdigit(int c);
 
 // UTILITIES
-void	ps_free(char **str);
+void	free_string(char **str);
 void	free_stack(t_list **stack);
 void	index_stack(t_list **stack);
 int		get_min(t_list **stack, int val);
 
 // VALIDATION
-void	ps_error(char *msg);
+void	error_message(char *msg);
 void	check_args(int argc, char **argv);
 int		is_sorted(t_list **stack);
 
 // SORT OPERATIONS
-void	move_top(t_list **stack, int distance);
-int		get_distance(t_list **stack, int index);
 int		pa(t_list **stack_a, t_list **stack_b);
 int		pb(t_list **stack_a, t_list **stack_b);
 int		sa(t_list **stack_a);
@@ -76,6 +74,7 @@ int		rr(t_list **stack_a, t_list **stack_b);
 int		rra(t_list **stack_a);
 int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
+int		index_distance_head(t_list **stack, int index);
 
 // ALGORITHMS
 void	sort_3(t_list **stack_a);

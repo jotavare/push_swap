@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 07:31:12 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:54 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:17 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	swap(t_list **stack)
 	head = *stack;
 	next = head->next;
 	if (!head && !next)
-		ps_error("Error");
+		error_message("Error");
 	tmp_val = head->value;
 	tmp_index = head->index;
 	head->value = next->value;

@@ -6,7 +6,7 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:15:26 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:07:23 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:38 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort_4(t_list **stack_a, t_list **stack_b)
 
 	if (is_sorted(stack_a))
 		return ;
-	distance = get_distance(stack_a, get_min(stack_a, -1));
+	distance = index_distance_head(stack_a, get_min(stack_a, -1));
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
@@ -53,7 +53,7 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
-	distance = get_distance(stack_a, get_min(stack_a, -1));
+	distance = index_distance_head(stack_a, get_min(stack_a, -1));
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
