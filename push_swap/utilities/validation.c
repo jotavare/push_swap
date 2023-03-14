@@ -6,11 +6,16 @@
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:28:45 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/14 02:06:57 by jotavare         ###   ########.fr       */
+/*   Updated: 2023/03/14 08:16:14 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+	/*
+	Checks if a given integer is present in a given array of strings.
+	Returns 1 if the integer is present and 0 otherwise.
+	*/
 
 static int	ft_contains(int num, char **argv, int i)
 {
@@ -25,6 +30,10 @@ static int	ft_contains(int num, char **argv, int i)
 	}
 	return (0);
 }
+
+	/*
+	Checks if a given string represents a valid integer number.
+	*/
 
 static int	ft_isnum(char *num)
 {
@@ -50,6 +59,11 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
+	/*
+	Takes a string argument av and splits it into an array of strings
+	using the delimiter ' '. Returns the array of strings.
+	*/
+
 static char	**argc2(char *av)
 {
 	char	**args;
@@ -57,6 +71,13 @@ static char	**argc2(char *av)
 	args = ft_split(av, ' ');
 	return (args);
 }
+
+	/*
+	Checks the validity of the arguments passed to the program,
+	which must be integers without duplicates and within the range
+	of an int data type. It also handles the case when the arguments
+	are passed as a single string separated by spaces.
+	*/
 
 void	check_args(int argc, char **argv)
 {
@@ -73,13 +94,13 @@ void	check_args(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ps_error("Error");
+			error_message("Error");
 		if (ft_contains(tmp, args, i) == 1)
-			ps_error("Error");
+			error_message("Error");
 		if (tmp < INT_MIN || tmp > 2147483647)
-			ps_error("Error");
+			error_message("Error");
 		i++;
 	}
 	if (argc == 2)
-		ps_free(args);
+		free_string(args);
 }

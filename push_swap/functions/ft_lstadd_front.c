@@ -12,6 +12,10 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Helps add a new element to the beggining of a linked list.
+	*/
+
 void	ft_lstadd_front(t_list **stack, t_list *new)
 {
 	new->next = *stack;

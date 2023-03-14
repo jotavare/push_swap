@@ -12,6 +12,12 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Returns a new string that is a duplicate of the input string.
+	It allocates memory for the new string and copies the contents
+	of the input string into the new memory location.
+	*/
+
 char	*ft_strdup(const char *s)
 {
 	size_t	len;

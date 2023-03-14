@@ -12,6 +12,12 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Iterates over the list, starting from the head and following the
+	next pointers until it reaches the last node, which is the one with next
+	set to NULL. Once it reaches that node, it returns a pointer to it.
+	*/
+
 t_list	*ft_lstlast(t_list *head)
 {
 	t_list	*tmp;

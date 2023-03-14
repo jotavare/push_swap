@@ -12,6 +12,10 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	The next 3 cases bellow are specific cases only.
+	*/
+
 static void	sort_132(t_list **stack_a)
 {
 	ra(stack_a);
@@ -37,6 +41,13 @@ static void	sort_312(t_list **stack_a, t_list *head, int min)
 		rra(stack_a);
 	}
 }
+
+	/*
+	Sorts a stack of three numbers by selecting the appropriate sorting
+	method based on their indices. Uses get_min, is_sorted, and
+	sort_132, sort_231, and sort_312 to sort the stack.
+	Its done this way so it can be used in the bigger algorithm.
+	*/
 
 void	sort_3(t_list **stack_a)
 {

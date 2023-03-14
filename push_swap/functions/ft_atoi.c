@@ -12,6 +12,13 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Converts a string representation of an integer to a long integer.
+	Skips any whitespace characters at the beginning of the string and
+	handles a leading sign (+ or -).
+	Long to prevent overflow of large numbers.
+	*/
+
 long	ft_atoi(const char *str)
 {
 	long	i;
