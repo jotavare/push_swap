@@ -12,9 +12,10 @@
 
 #include "../header/push_swap.h"
 
-/*
-This is a function that calculates the distance (number of elements) between the top of a stack and a specified index in the stack. It takes two parameters, a pointer to a pointer to the first element of the stack (stack), and an integer representing the index of the element to calculate the distance to (index).
-*/
+	/*
+	This function calculates the distance between a given
+	index and the head of a linked list stack.
+	*/
 
 int	get_distance(t_list **stack, int index)
 {
@@ -33,9 +34,11 @@ int	get_distance(t_list **stack, int index)
 	return (distance);
 }
 
-/*
-If the distance is less than or equal to half the size of the stack, the function uses the "ra" operation (presumably defined elsewhere in the code) to move the top element down the stack. It does this by repeatedly calling "ra" distance times, effectively moving the top element down the stack by distance positions.
-*/
+	/*
+	This function moves the top element of a linked list stack a certain
+	distance away from the head of the stack using the "ra" and "rra" functions.
+	*/
+
 void	move_top(t_list **stack, int distance)
 {
 	t_list	*head;

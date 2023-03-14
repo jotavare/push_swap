@@ -13,7 +13,11 @@
 // LIBRARY
 #include "../header/push_swap.h"
 
-// ROTATE
+	/*
+	Performs a rotation of a linked list stack by moving its first
+	element to the end. It returns -1 if the stack has less than 2 elements.
+	*/
+
 static int	rotate(t_list **stack)
 {
 	t_list	*head;
@@ -29,7 +33,11 @@ static int	rotate(t_list **stack)
 	return (0);
 }
 
-// [ra] shift up all elements of stack a by 1.
+	/*
+	Performs a rotation of a linked list stack (A) by moving its
+	first element to the end. Prints "ra".
+	*/
+
 int	ra(t_list **stack_a)
 {
 	if (rotate(stack_a) == -1)
@@ -38,7 +46,11 @@ int	ra(t_list **stack_a)
 	return (0);
 }
 
-// [rb] shift up all elements of stack b by 1.
+	/*
+	Performs a rotation of a linked list stack (B) by moving its
+	first element to the end. Prints "rb".
+	*/
+
 int	rb(t_list **stack_b)
 {
 	if (rotate(stack_b) == -1)
@@ -46,7 +58,12 @@ int	rb(t_list **stack_b)
 	write(1, "rb\n", 3);
 	return (0);
 }
-// [rr] ra and rb at the same time
+
+	/*
+	Performs a rotation of the top element of both linked list stacks
+	(A and B) by moving their first element to the end of the list. Prints "rr".
+	*/
+
 int	rr(t_list **stack_a, t_list **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))

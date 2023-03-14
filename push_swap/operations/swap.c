@@ -13,7 +13,11 @@
 // LIBRARY
 #include "../header/push_swap.h"
 
-// SWAP
+	/*
+	Performs a swap to the first two elements of a linked list
+	stack and returns -1 if the stack has less than 2 elements.
+	*/
+
 static int	swap(t_list **stack)
 {
 	t_list	*head;
@@ -36,7 +40,11 @@ static int	swap(t_list **stack)
 	return (0);
 }
 
-// swap the first 2 elements at the top of stack a
+	/*
+	Performs a swap to the first two elements of a linked list stack (A)
+	and returns -1 if the stack has less than 2 elements. Prints "sa".
+	*/
+
 int	sa(t_list **stack_a)
 {
 	if (swap(stack_a) == -1)
@@ -45,7 +53,11 @@ int	sa(t_list **stack_a)
 	return (0);
 }
 
-// swap the first 2 elements at the top of stack b.
+	/*
+	Performs a swap to the first two elements of a linked list stack (B)
+	and returns -1 if the stack has less than 2 elements. Prints "sb".
+	*/
+
 int	sb(t_list **stack_b)
 {
 	if (swap(stack_b) == -1)
@@ -53,8 +65,12 @@ int	sb(t_list **stack_b)
 	write(1, "sb\n", 3);
 	return (0);
 }
-
-// sa and sb at the same time.
+	
+	/*
+	Performs swaps the first two elements of two linked list stacks (A and B),
+	and returns -1 if either of the stacks has less than 2 elements. Prints "ss".
+	*/
+	
 int	ss(t_list **stack_a, t_list **stack_b)
 {	
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
