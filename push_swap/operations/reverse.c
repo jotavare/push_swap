@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// LIBRARY
 #include "../header/push_swap.h"
 
-// REVERSE ROTATE
+	/*
+	Performs a reverse order of the linked list stack byswapping
+	its first and last elements. It returns -1 if the stack has less
+	than 2 elements.
+	*/
+
 static int	reverse(t_list **stack)
 {
 	t_list	*head;
@@ -37,7 +41,11 @@ static int	reverse(t_list **stack)
 	return (0);
 }
 
-// [rra] shift down all elements of stack a by 1.
+	/*
+	Performs a reverse rotation of a linked list stack (A) by
+	moving its last element to the beginning. Prints "rra".
+	*/
+
 int	rra(t_list **stack_a)
 {
 	if (reverse(stack_a) == -1)
@@ -46,7 +54,11 @@ int	rra(t_list **stack_a)
 	return (0);
 }
 
-// [rrb] shift down all elements of stack b by 1.
+	/*
+	Performs a reverse rotation of a linked list stack (B) by
+	moving its last element to the beginning. Prints "rrb".
+	*/
+
 int	rrb(t_list **stack_b)
 {
 	if (reverse(stack_b) == -1)
@@ -55,7 +67,11 @@ int	rrb(t_list **stack_b)
 	return (0);
 }
 
-// [rrr] rra and rrb at the same time.
+	/*
+	Performs a simultaneous reverse rotation of both linked list stacks
+	(A and B) by moving their last elements to the beginning. Prints "rrr".
+	*/
+
 int	rrr(t_list **stack_a, t_list **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))

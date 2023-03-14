@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// LIBRARY
 #include "../header/push_swap.h"
 
-// PUSH
+	/*
+	Performs a push to the top element of one stack into another
+	stack, but returns -1 if the source stack is empty to indicate failure.
+	*/
+
 static int	push(t_list **stack_to, t_list **stack_from)
 {
 	t_list	*tmp;
@@ -41,7 +44,11 @@ static int	push(t_list **stack_to, t_list **stack_from)
 	return (0);
 }
 
-// take the first element at the top of b and put it at the top of a.
+	/*
+	Performs a push to the top element of stack (B) into stack (A) and prints
+	"pa" to standard output. It returns -1 if the stack (B) is empty.
+	*/
+
 int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
@@ -50,7 +57,11 @@ int	pa(t_list **stack_a, t_list **stack_b)
 	return (0);
 }
 
-// take the first element at the top of a and put it at the top of b.
+	/*
+	Performs a push to the top element of stack (A) into stack (B) and prints
+	"pb" to standard output. It returns -1 if the stack (A) is empty.
+	*/
+
 int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
@@ -58,4 +69,3 @@ int	pb(t_list **stack_a, t_list **stack_b)
 	write(1, "pb\n", 3);
 	return (0);
 }
-
