@@ -12,6 +12,10 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Helps add a new element to the end of a linked list.
+	*/
+
 void	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*node;

@@ -12,6 +12,11 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Takes a string as input and returns the length of the
+	string (number of characters in the string).
+	*/
+
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -24,6 +29,11 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+
+	/*
+	Creates a new string that is a portion of an input string,
+	starting from a specified index and with a specified length.
+	*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

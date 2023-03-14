@@ -12,6 +12,11 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	The ft_isdigit function checks if the input character is a digit
+	(0-9) or not, and returns 1 if it is a digit, or 0 otherwise.
+	*/
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

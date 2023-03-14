@@ -12,6 +12,11 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Counts the number of words in a string str based on a separator c.
+	It returns the total count of words in the string.
+	*/
+
 static int	ft_count_words(char const *str, char c)
 {
 	int	i;
@@ -33,6 +38,11 @@ static int	ft_count_words(char const *str, char c)
 	return (count);
 }
 
+	/*
+	Takes a word and a string, and puts the word in the string starting
+	from index i and for word_len (length of the word) characters, then
+	returns the resulting string.
+	*/
 static char	*ft_putword(char *word, char const *s, int i, int word_len)
 {
 	int	j;
@@ -47,6 +57,11 @@ static char	*ft_putword(char *word, char const *s, int i, int word_len)
 	word[j] = '\0';
 	return (word);
 }
+
+	/*
+	Splits a string into an array of substrings based
+	on a delimiter character, and returns the array of substrings.
+	*/
 
 static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 {
@@ -76,6 +91,11 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 	s2[word] = 0;
 	return (s2);
 }
+
+	/*
+	This function splits a string into words based on a given
+	delimiter character and returns an array of pointers to those words.
+	*/
 
 char	**ft_split(char const *s, char c)
 {

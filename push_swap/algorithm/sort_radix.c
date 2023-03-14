@@ -12,6 +12,13 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Calculates the number of bits required to represent the
+	largest element in a stack of integers. It takes a pointer
+	to a pointer to a t_list structure as input and returns
+	the number of bits as an integer.
+	*/
+
 static int	get_max_bits(t_list **stack)
 {
 	t_list	*head;
@@ -31,6 +38,15 @@ static int	get_max_bits(t_list **stack)
 		max_bits++;
 	return (max_bits);
 }
+
+	/*
+	Function takes two pointers to t_list structures as input and
+	sorts the stack using the radix sort algorithm. It first determines
+	the maximum number of bits needed to represent the largest element
+	in the stack, then iterates through each bit position and performs
+	bucket sorting based on that position. Finally, it assembles the
+	sorted stack by repeatedly pushing the elements back onto stack A.
+	*/
 
 void	radix_sort(t_list **stack_a, t_list **stack_b)
 {

@@ -12,6 +12,11 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Takes a pointer to the beginning of a linked list and returns
+	the number of elements (nodes) in the list.
+	*/
+
 int	ft_lstsize(t_list *head)
 {
 	size_t	i;

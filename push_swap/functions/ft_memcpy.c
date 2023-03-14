@@ -12,6 +12,12 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Copies n bytes from the memory area pointed to by src to the memory
+	area pointed to by dest. It returns a pointer to the destination
+	memory area. It works even if the memory areas overlap.
+	*/
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned const char	*pt_src;

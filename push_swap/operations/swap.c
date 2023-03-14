@@ -65,12 +65,12 @@ int	sb(t_list **stack_b)
 	write(1, "sb\n", 3);
 	return (0);
 }
-	
+
 	/*
 	Performs swaps the first two elements of two linked list stacks (A and B),
 	and returns -1 if either of the stacks has less than 2 elements. Prints "ss".
 	*/
-	
+
 int	ss(t_list **stack_a, t_list **stack_b)
 {	
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))

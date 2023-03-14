@@ -12,12 +12,20 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Prints an error message and terminates the program.
+	*/
+
 void	ps_error(char *msg)
 {
 	(void)msg;
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
+
+	/*
+	Frees the memory allocated for a string array.
+	*/
 
 void	ps_free(char **str)
 {
@@ -30,6 +38,11 @@ void	ps_free(char **str)
 		free(str[i--]);
 	free(str);
 }
+
+	/*
+	Frees the memory allocated to a stack represented by a
+	linked list by freeing each node in the list and the list itself.
+	*/
 
 void	free_stack(t_list **stack)
 {

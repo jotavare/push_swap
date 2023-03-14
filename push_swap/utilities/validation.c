@@ -12,6 +12,11 @@
 
 #include "../header/push_swap.h"
 
+	/*
+	Checks if a given integer is present in a given array of strings.
+	Returns 1 if the integer is present and 0 otherwise.
+	*/
+
 static int	ft_contains(int num, char **argv, int i)
 {
 	i++;
@@ -25,6 +30,10 @@ static int	ft_contains(int num, char **argv, int i)
 	}
 	return (0);
 }
+
+	/*
+	Checks if a given string represents a valid integer number.
+	*/
 
 static int	ft_isnum(char *num)
 {
@@ -50,6 +59,11 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
+	/*
+	Takes a string argument av and splits it into an array of strings
+	using the delimiter ' '. Returns the array of strings.
+	*/
+
 static char	**argc2(char *av)
 {
 	char	**args;
@@ -57,6 +71,13 @@ static char	**argc2(char *av)
 	args = ft_split(av, ' ');
 	return (args);
 }
+
+	/*
+	Checks the validity of the arguments passed to the program,
+	which must be integers without duplicates and within the range
+	of an int data type. It also handles the case when the arguments
+	are passed as a single string separated by spaces.
+	*/
 
 void	check_args(int argc, char **argv)
 {
