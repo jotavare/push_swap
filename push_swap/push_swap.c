@@ -5,99 +5,75 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 07:36:57 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/08 03:15:44 by jotavare         ###   ########.fr       */
+/*   Created: 2023/03/13 23:58:38 by jotavare          #+#    #+#             */
+/*   Updated: 2023/03/14 02:05:02 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// LIBRARY
-#include "header/push_swap.h"
+#include "./header/push_swap.h"
 
-// INICIALIZE MY STRUCT
-void initialize_stack(t_data *stack, int ac)
+static void	init_stack(t_list **stack, int argc, char **argv)
 {
-	stack->size_a = ac - 1;
-	stack->size_b = 0;
-	stack->stack_a = (int *)ft_calloc(stack->size_a, sizeof(int));
-	stack->stack_b = (int *)ft_calloc(ac, sizeof(int));
-	stack->max = INT_MAX;
-	stack->min = INT_MIN;
-	stack->med = 0;
-}
-
-// FILL THE STACK A WITH VALUES
-// CHECK IF NUMBER IS > INT_MAX OR < INT_MIN
-void fill_stack(t_data *stack, int ac, char **av)
-{
-	int i;
-	int j;
-	long long int number;
+	t_list	*new;
+	char	**args;
+	int		i;
 
 	i = 0;
-	j = 1;
-	while (j < ac)
+	if (argc == 2)
 	{
-		check_digit(ac, av);
-		number = my_atoi(av[j]);
-		check_min_max(number);
-		stack->stack_a[i] = number;
+		args = ft_split(argv[1], ' ');
+	}
+	else
+	{
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
+	{
+		new = ft_lstnew(ft_atoi(args[i]));
+		ft_lstadd_back(stack, new);
 		i++;
-		j++;
+	}
+	index_stack(stack);
+	if (argc == 2)
+	{
+		ps_free(args);
 	}
 }
 
-// MAIN
-// CHECK NUMBER OF ARGUMENTS
-// INITIALIZE, FILL, CHECK & PRINT
-int main(int ac, char **av)
+static void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
-	t_data stack;
-
-	initialize_stack(&stack, ac);
-	fill_stack(&stack, ac, av);
-	check_sorted(&stack);
-	check_duplicates(&stack);
-
-	// CHECK NO PARAMETERS
-	if (ac <= 2)
+	if (ft_lstsize(*stack_a) <= 5)
 	{
-		exit(EXIT_FAILURE);
+		simple_sort(stack_a, stack_b);
 	}
-
-	// SORT ALGORITHMS
-	if (stack.size_a <= 2)
-		sort_two(&stack);
-	else if (stack.size_a == 3)
-		sort_three(&stack);
-	else if (stack.size_a <= 5)
-		sort_five(&stack);
 	else
 	{
-		sort_radix(&stack);
+		radix_sort(stack_a, stack_b);
 	}
+}
 
-	/*
-	// PRINTF
-	ft_printf("-------\n");
-	while (index < stack.size_a)
+int	main(int argc, char **argv)
+{
+	t_list	**stack_a;
+	t_list	**stack_b;
+
+	if (argc < 2)
 	{
-		ft_printf("%d\n", stack.stack_a[index]);
-		index++;
+		return (-1);
 	}
-	ft_printf("-------\n");
-	ft_printf("Stack A\n");
-
-	ft_printf("-------\n");
-	while (index < stack.size_b)
+	check_args(argc, argv);
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	*stack_a = NULL;
+	init_stack(stack_a, argc, argv);
+	if (is_sorted(stack_a) == 1)
 	{
-		ft_printf("%d\n", stack.stack_b[index]);
-		index++;
+		exit (EXIT_SUCCESS);
 	}
-	ft_printf("-------\n");
-	ft_printf("Stack B\n");
-	*/
-
-	free(stack.stack_a);
-	free(stack.stack_b);
-	return (EXIT_SUCCESS);
+	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_b = NULL;
+	sort_stack(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
 }

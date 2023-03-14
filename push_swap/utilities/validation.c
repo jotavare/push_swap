@@ -5,141 +5,81 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 07:31:12 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/07 23:40:17 by jotavare         ###   ########.fr       */
+/*   Created: 2023/03/14 00:28:45 by jotavare          #+#    #+#             */
+/*   Updated: 2023/03/14 02:06:57 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// LIBRARY
 #include "../header/push_swap.h"
 
-// ATOI THAT CHECKS INT_MAX AND INT_MIN
-int my_atoi(const char *str)
+static int	ft_contains(int num, char **argv, int i)
 {
-	int sign = 1;
-	int result = 0;
-	int i = 0;
-
-	if (str[i] == '-')
+	i++;
+	while (argv[i])
 	{
-		sign = -1;
-		i++;
-	}
-
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		int digit = str[i] - '0';
-
-		if (result > (INT_MAX - digit) / 10)
+		if (ft_atoi(argv[i]) == num)
 		{
-			ft_printf("Error\n");
-			exit(EXIT_FAILURE);
+			return (1);
 		}
-		result = result * 10 + digit;
 		i++;
 	}
-
-	if (i >= 10 && sign == 1 && result > INT_MAX)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if (i >= 10 && sign == -1 && result > -(INT_MIN + 1))
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
-
-	return result * sign;
+	return (0);
 }
 
-// CHECK FOR INT_MIN AND INT_MAX
-void check_min_max(int number)
+static int	ft_isnum(char *num)
 {
-	if (number > INT_MAX || number < INT_MIN)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
-}
-
-// CHECK IF THE NUMBER IS A DIGIT
-void check_digit(int ac, char **av)
-{
-	int i;
-	int j;
+	int	i;
 
 	i = 0;
-	while (++i < ac)
+	if (num[0] == '-' || num[0] == '+')
 	{
-		j = 0;
-		if (av[i][j] == '-')
-			j++;
-		while (av[i][j])
-		{
-			if (ft_isdigit(av[i][j]) == 0)
-			{
-				ft_printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
-			j++;
-		}
+		i++;
 	}
+	if ((num[0] == '-' || num[0] == '+') && !num[1])
+	{
+		return (0);
+	}
+	while (num[i])
+	{
+		if (!ft_isdigit(num[i]))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
 
-// CHECK IF THE STACK IS SORTED
-void check_sorted(t_data *stack)
+static char	**argc2(char *av)
 {
-	int i = 0;
+	char	**args;
 
-	while (i < stack->size_a - 1)
-	{
-		if (stack->stack_a[i] >= stack->stack_a[i + 1])
-		{
-			return;
-		}
-		i++;
-	}
-	exit(EXIT_FAILURE);
+	args = ft_split(av, ' ');
+	return (args);
 }
 
-// CHECK DUPLICATE NUMBERS
-void check_duplicates(t_data *stack)
+void	check_args(int argc, char **argv)
 {
-	bool duplicatesFound = false;
-	int i = 0;
-	while (i < stack->size_a - 1 && !duplicatesFound)
-	{
-		int j = i + 1;
-		while (j < stack->size_a && !duplicatesFound)
-		{
-			if (stack->stack_a[i] == stack->stack_a[j])
-			{
-				duplicatesFound = true;
-			}
-			j++;
-		}
-		i++;
-	}
-	i = 0;
-	while (i < stack->size_b - 1 && !duplicatesFound)
-	{
-		int j = i + 1;
-		while (j < stack->size_b && !duplicatesFound)
-		{
-			if (stack->stack_b[i] == stack->stack_b[j])
-			{
-				free_all(stack);
+	int		i;
+	long	tmp;
+	char	**args;	
 
-				duplicatesFound = true;
-			}
-			j++;
-		}
+	i = 1;
+	if (argc == 2)
+		args = argc2(argv[1]);
+	else
+		args = argv;
+	while (args[i])
+	{
+		tmp = ft_atoi(args[i]);
+		if (!ft_isnum(args[i]))
+			ps_error("Error");
+		if (ft_contains(tmp, args, i) == 1)
+			ps_error("Error");
+		if (tmp < INT_MIN || tmp > 2147483647)
+			ps_error("Error");
 		i++;
 	}
-	if (duplicatesFound)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
+	if (argc == 2)
+		ps_free(args);
 }

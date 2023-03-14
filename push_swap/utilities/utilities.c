@@ -5,66 +5,77 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotavare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 07:31:12 by jotavare          #+#    #+#             */
-/*   Updated: 2023/03/07 23:40:15 by jotavare         ###   ########.fr       */
+/*   Created: 2023/03/14 00:28:37 by jotavare          #+#    #+#             */
+/*   Updated: 2023/03/14 02:06:57 by jotavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// LIBRARY
 #include "../header/push_swap.h"
 
-// FREE ALL
-void free_all(t_data *stack)
+int	get_min(t_list **stack, int val)
 {
-	free(stack->stack_a);
-	free(stack->stack_b);
+	t_list	*head;
+	int		min;
+
+	head = *stack;
+	min = head->index;
+	while (head->next)
+	{
+		head = head->next;
+		if ((head->index < min) && head->index != val)
+			min = head->index;
+	}
+	return (min);
 }
 
-// EXIT ERROR
-void exit_error(t_data *stack)
+static t_list	*get_next_min(t_list **stack)
 {
-	if (stack->stack_a == NULL)
-	{
-		free(stack->stack_a);
-	}
-	if (stack->stack_b == NULL)
-	{
-		free(stack->stack_b);
-	}
-	ft_printf("Error\n");
-	exit(1);
-}
+	t_list	*head;
+	t_list	*min;
+	int		has_min;
 
-// MAX NUMBER FROM STACK A
-int max_value(t_data *stack)
-{
-	int i = 0;
-
-	while (i < stack->size_a)
+	min = NULL;
+	has_min = 0;
+	head = *stack;
+	if (head)
 	{
-		if (stack->stack_a[i] > stack->max)
+		while (head)
 		{
-			stack->max = stack->stack_a[i];
+			if ((head->index == -1) && (!has_min || head->value < min->value))
+			{
+				min = head;
+				has_min = 1;
+			}
+			head = head->next;
 		}
-		i++;
 	}
-
-	return stack->max;
+	return (min);
 }
 
-// MIN NUMBER FROM STACK A
-int min_value(t_data *stack)
+void	index_stack(t_list **stack)
 {
-	int i = 0;
+	t_list	*head;
+	int		index;
 
-	while (i < stack->size_a)
+	index = 0;
+	head = get_next_min(stack);
+	while (head)
 	{
-		if (stack->stack_a[i] < stack->min)
-		{
-			stack->min = stack->stack_a[i];
-		}
-		i++;
+		head->index = index++;
+		head = get_next_min(stack);
 	}
+}
 
-	return stack->min;
+int	is_sorted(t_list **stack)
+{
+	t_list	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
 }
