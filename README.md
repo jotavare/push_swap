@@ -115,11 +115,10 @@ At 42 School, it is expected that almost every project is written in accordance 
 <a href="https://github.com/jotavare/jotavare/blob/main/42/pdf/en_norm.pdf">Click here</a> for more information on 42 norms.
 
 ## TESTERS
-* [Francinette](https://github.com/xicodomingues/francinette)
-* [Libft Tester](https://github.com/Tripouille/libftTester)
-* [Libft Unit Test](https://github.com/alelievr/libft-unit-test)
-* [Libft Test](https://github.com/jtoty/Libftest)
-* [Libft War Machine](https://github.com/0x050f/libft-war-machine)
+- [Push Swap Visualizer](https://github.com/o-reo/push_swap_visualizer) `o-reo` `GitHub`
+- [Push Swap Tester](https://github.com/laisarena/push_swap_tester) `laisarena` `GitHub`
+- [Push Swap Leak Tester](https://github.com/IDC87/push_swap_leak_tester) `IDC87` `GitHub`
+- [Push Swap Tester](https://github.com/gemartin99/Push-Swap-Tester) `gemartin99` `GitHub`
 
 ## LICENSE
 <p>
