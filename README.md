@@ -61,8 +61,8 @@ ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 ``make re`` - use rules `fclean` + `all`
 
 
-## Mandatory
-#### push_swap rules:
+## MANDATORY
+#### RULES:
 The program is only allowed two stacks to work with, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
 
 Possible actions are:
@@ -79,7 +79,7 @@ Possible actions are:
 * ```rrb``` **(reverse rotate B)**: Shift all elements of stack b down by 1. The last element becomes the first one;
 * ```rrr``` : ```rra``` and ```rrb``` at the same time;
 
-#### Grade
+#### GRADE
 The grade depends on how efficient the program's sorting process is.
  
 * Sorting **3 values**: no more than **3 actions**.
@@ -101,7 +101,7 @@ The grade depends on how efficient the program's sorting process is.
 
 Validating the project requires at least 80/100.
 
-#### Error Management
+#### ERROR MANAGEMENT
 The program should print `Error` + `\n` if the following tests are made:
 
 -Non numeric parameters
@@ -116,7 +116,7 @@ The program should print `Error` + `\n` if the following tests are made:
 ./push_swap 4 2 -2147483649
 ```
 
-#### Sorted Examples
+#### SORTED EXAMPLES
 Should not print anything if the following tests are made:
 
 ```bash
