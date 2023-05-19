@@ -104,10 +104,10 @@ Validating the project requires at least 80/100.
 #### ERROR MANAGEMENT
 The program should print `Error` + `\n` if the following tests are made:
 
--Non numeric parameters
--Duplicate numeric parameter
--Numeric parameter greater than INT_MAX
--Numeric parameter less than INT_MIN
+* Non numeric parameters;
+* Duplicate numeric parameter;
+* Numeric parameter greater than INT_MAX;
+* Numeric parameter less than INT_MIN;
 
 ```bash
 ./push_swap 4 bb 2
