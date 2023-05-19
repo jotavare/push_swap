@@ -99,7 +99,7 @@ The grade depends on how efficient the program's sorting process is.
   * **2 points** for less than **10000 actions**;
   * **1 point** for less than **11500 actions**;
 
-Validating the project requires at least 80/100.
+> Note: Validating the project requires at least 80/100.  I belive 3 points in 100 & 500 would be 80/80.
 
 #### ERROR MANAGEMENT
 The program should print `Error` + `\n` if the following tests are made:
