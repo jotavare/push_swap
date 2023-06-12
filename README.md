@@ -38,6 +38,7 @@ cd push_swap/push_swap
 make
 ```
 #### 3º - Run the code
+> If you have problems running the ./checker, use chmod 777 ./checker and try again.
 ```bash
 ./push_swap [numbers] | ./checker [numbers]
 ./push_swap 9 0 -217 2147483647 -2147483648 | ./checker 9 0 -217 2147483647 -2147483648
