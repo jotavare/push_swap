@@ -53,15 +53,15 @@ ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 
 `make` - Compile push_swap **mandatory** functions.
 
-``make bonus`` - Compile push_swap **bonus** functions.
+`make bonus` - Compile push_swap **bonus** functions.
 
-``make all`` - Compile **mandatory** + **bonus** functions.
+`make all` - Compile **mandatory** + **bonus** functions.
 
-``make clean`` - Delete all .o (object files) files.
+`make clean` - Delete all .o (object files) files.
 
-``make fclean`` - Delete all .o (object files) and .a (executable) files.
+`make fclean` - Delete all .o (object files) and .a (executable) files.
 
-``make re`` - Use rules `fclean` + `all`.
+`make re` - Use rules `fclean` + `all`.
 
 
 ## MANDATORY
