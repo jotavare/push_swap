@@ -72,8 +72,8 @@ Possible actions:
 
 - [x] `pa` **(push A)**: Take the first element at the top of B and put it at the top of A. Do nothing if B is empty.
 - [x] `pb` **(push B)**: Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
-- [x] `sa` **(swap A)**: Swap the first 2 elements at the top of stack A. Do nothing if there is only one or no elements.
-- [x] `sb` **(swap B)**: Swap the first 2 elements at the top of stack B. Do nothing if there is only one or no elements.
+- [x] `sa` **(swap A)**: Swap the first 2 elements at the top of stack A. Do nothing if there are only one or no elements.
+- [x] `sb` **(swap B)**: Swap the first 2 elements at the top of stack B. Do nothing if there are only one or no elements.
 - [x] `ss`: `sa` and `sb` at the same time.
 - [x] `ra` **(rotate A)**: Shift all elements of stack A up by 1. The first element becomes the last one.
 - [x] `rb` **(rotate B)**: Shift all elements of stack B up by 1. The first element becomes the last one.
@@ -102,12 +102,12 @@ Possible actions:
    - [x] **2 points** for less than **10000 actions**.
    - [x] **1 point** for less than **11500 actions**.
 
-> Note: Validating the project requires at least 80/100.  I belive 3 points with 100 and 500 numbers would be 80/100.
+> Note: Validating the project requires at least 80/100. I believe 3 points with 100 and 500 numbers would be 80/100.
 
 #### ERROR MANAGEMENT
 > The program should print `Error` + `\n` if the following tests are made:
 
-- [x] Non numeric parameters.
+- [x] Non-numeric parameters.
 - [x] Duplicate numeric parameter.
 - [x] Numeric parameter greater than INT_MAX.
 - [x] Numeric parameter less than INT_MIN.
@@ -134,15 +134,14 @@ Possible actions:
 ```
 
 ## BONUS
-
 - [ ] Create a checker for push_swap that will read the program instructions and display `KO` or `OK`.
 
 ## NORMINETTE
 At 42 School, it is expected that almost every project is written in accordance with the Norm, which is the coding standard of the school.
 
 ```
-- No for, do...while, switch, case, goto, ternary operators and variable lenght arrays are allowed
-- Each function must be maximum 25 lines, not counting the function's own curly brackets
+- No for, do...while, switch, case, goto, ternary operators and variable-length arrays are allowed
+- Each function must be a maximum of 25 lines, not counting the function's curly brackets
 - Each line must be at most 80 columns wide, comments included
 - A function can take 4 named parameters maximum
 - No assigns and declarations in the same line (unless static)
@@ -152,7 +151,7 @@ At 42 School, it is expected that almost every project is written in accordance 
 
 * [42 Norms](https://github.com/jotavare/jotavare/blob/main/42/pdf/en_norm.pdf) - Information about 42 code norms. `PDF`
 * [Norminette](https://github.com/42School/norminette) - Tool by 42, to respect the code norm. `GitHub`
-* [42 Header](https://github.com/42Paris/42header) - 42 header for vim. `GitHub`
+* [42 Header](https://github.com/42Paris/42header) - 42 header for Vim. `GitHub`
 
 ## LICENSE
 <p>
