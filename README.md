@@ -89,28 +89,28 @@ Possible actions:
 - [x] Sorting **5 values**: no more than **12 actions**.
 - [x] Sorting **100 values**: **rating from 1 to 5 points** depending on the number of actions:
 
-   - [ ] **5 points** for less than **700 actions**;
-   - [ ] **4 points** for less than **900 actions**;
-   - [x] **3 points** for less than **1100 actions**;
-   - [x] **2 points** for less than **1300 actions**;
-   - [x] **1 point** for less than **1500 actions**;
+   - [ ] **5 points** for less than **700 actions**.
+   - [ ] **4 points** for less than **900 actions**.
+   - [x] **3 points** for less than **1100 actions**.
+   - [x] **2 points** for less than **1300 actions**.
+   - [x] **1 point** for less than **1500 actions**.
 - [x] Sorting **500 values**: **rating from 1 to 5 points** depending on the number of actions:
 
-   - [ ] **5 points** for less than **5500 actions**;
-   - [x] **4 points** for less than **7000 actions**;
-   - [x] **3 points** for less than **8500 actions**;
-   - [x] **2 points** for less than **10000 actions**;
-   - [x] **1 point** for less than **11500 actions**;
+   - [ ] **5 points** for less than **5500 actions**.
+   - [x] **4 points** for less than **7000 actions**.
+   - [x] **3 points** for less than **8500 actions**.
+   - [x] **2 points** for less than **10000 actions**.
+   - [x] **1 point** for less than **11500 actions**.
 
 > Note: Validating the project requires at least 80/100.  I belive 3 points with 100 and 500 numbers would be 80/100.
 
 #### ERROR MANAGEMENT
 > The program should print `Error` + `\n` if the following tests are made:
 
-- [x] Non numeric parameters;
-- [x] Duplicate numeric parameter;
-- [x] Numeric parameter greater than INT_MAX;
-- [x] Numeric parameter less than INT_MIN;
+- [x] Non numeric parameters.
+- [x] Duplicate numeric parameter.
+- [x] Numeric parameter greater than INT_MAX.
+- [x] Numeric parameter less than INT_MIN.
 
 ```bash
 ./push_swap 4 bb 2
@@ -134,6 +134,8 @@ Possible actions:
 ```
 
 ## BONUS
+
+- [ ] Create a checker for push_swap that will read the program instructions and display `KO` or `OK`.
 
 ## NORMINETTE
 At 42 School, it is expected that almost every project is written in accordance with the Norm, which is the coding standard of the school.
