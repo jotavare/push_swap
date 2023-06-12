@@ -4,6 +4,8 @@
 
 <p align="center">
 	<img src="https://img.shields.io/badge/status-finished-success?color=%2312bab9&style=flat-square" />
+	<img src="https://img.shields.io/badge/evaluated-03%20%2F%2004%20%2F%202023-success?color=%2312bab9&style=flat-square" />
+	<img src="https://img.shields.io/badge/score-84%20%2F%20100-success?color=%2312bab9&style=flat-square" />
 	<img src="https://img.shields.io/github/languages/top/jotavare/libft?color=%2312bab9&style=flat-square" />
 	<img src="https://img.shields.io/github/last-commit/jotavare/libft?color=%2312bab9&style=flat-square" />
 	<a href='https://www.linkedin.com/in/joaoptoliveira' target="_blank"><img alt='Linkedin' src='https://img.shields.io/badge/LinkedIn-100000?style=flat-square&logo=Linkedin&logoColor=white&labelColor=0A66C2&color=0A66C2'/></a>
@@ -15,8 +17,7 @@
 	<a href="#how-to-use">How to use</a> •
 	<a href="#mandatory">Mandatory</a> •
 	<a href="#bonus">Bonus</a> •
-	<a href="#disclaimer">Disclaimer</a> •
-	<a href="#testers">Testers</a> •
+	<a href="#norminette">Norminette</a> •
 	<a href="#license">License</a>
 </p>
 
@@ -26,88 +27,90 @@ push_swap is a project at 42 that involves developing a sorting algorithm for a 
 <a href="https://github.com/jotavare/push_swap/blob/master/subject/en_subject_push_swap.pdf">Click here</a> for the subject of this project.
 
 ## HOW TO USE
-#### COMPILE
+#### COMPILATION AND EXECUTION
 #### 1º - Clone the repository
 ```bash
 git clone git@github.com:jotavare/push_swap.git
 ```
 #### 2º - Enter the project folder and run `make`
 ```bash
-cd push_swap\push_swap
+cd push_swap/push_swap
 make
 ```
 #### 3º - Run the code
+> If you have problems running the `./checker`, use `chmod 777 ./checker` and try again.
 ```bash
-./push_swap <numbers>
-./push_swap 9 0 -217 2147483647 -2147483648
+./push_swap [numbers] | ./checker [numbers]
+./push_swap 9 0 -217 2147483647 -2147483648 | ./checker 9 0 -217 2147483647 -2147483648
 ```
-#### 4º - Use the subject checker
+#### 4º - Assign numbers to a variable and run the code
 ```bash
+ARG=["numbers"]; ./push_swap $ARG | ./checker $ARG
 ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 ```
 
 #### MAKEFILE RULES
 
-`make` - Compile libft mandatory functions.
+`make` - Compile push_swap **mandatory** functions.
 
-``make bonus`` - Compile libft bonus functions.
+`make bonus` - Compile push_swap **bonus** functions.
 
-``make all`` - Compile all functions.
+`make all` - Compile **mandatory** + **bonus** functions.
 
-``make clean`` - Delete all .o (object files) files.
+`make clean` - Delete all .o (object files) files.
 
-``make fclean`` - Delete all .o (object files) and .a (executable) files.
+`make fclean` - Delete all .o (object files) and .a (executable) files.
 
-``make re`` - use rules `fclean` + `all`
+`make re` - Use rules `fclean` + `all`.
 
 
 ## MANDATORY
-#### RULES:
+#### RULES
 > The program is only allowed two stacks to work with, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
 
-Possible actions are:
+Possible actions:
 
-* ```pa``` **(push A)**: Take the first element at the top of B and put it at the top of A. Do nothing if B is empty;
-* ```pb``` **(push B)**: Take the first element at the top of A and put it at the top of B. Do nothing if A is empty;
-* ```sa``` **(swap A)**: Swap the first 2 elements at the top of stack A. Do nothing if there is only one or no elements;
-* ```sb``` **(swap B)**: Swap the first 2 elements at the top of stack B. Do nothing if there is only one or no elements;
-* ```ss```: ```sa``` and ```sb``` at the same time;
-* ```ra``` **(rotate A)**: Shift all elements of stack A up by 1. The first element becomes the last one;
-* ```rb``` **(rotate B)**: Shift all elements of stack B up by 1. The first element becomes the last one;
-* ```rr```: ```ra``` and ```rb``` at the same time;
-* ```rra``` **(reverse rotate A)**: Shift all elements of stack A down by 1. The last element becomes the first one;
-* ```rrb``` **(reverse rotate B)**: Shift all elements of stack b down by 1. The last element becomes the first one;
-* ```rrr``` : ```rra``` and ```rrb``` at the same time;
+- [x] `pa` **(push A)**: Take the first element at the top of B and put it at the top of A. Do nothing if B is empty.
+- [x] `pb` **(push B)**: Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
+- [x] `sa` **(swap A)**: Swap the first 2 elements at the top of stack A. Do nothing if there are only one or no elements.
+- [x] `sb` **(swap B)**: Swap the first 2 elements at the top of stack B. Do nothing if there are only one or no elements.
+- [x] `ss`: `sa` and `sb` at the same time.
+- [x] `ra` **(rotate A)**: Shift all elements of stack A up by 1. The first element becomes the last one.
+- [x] `rb` **(rotate B)**: Shift all elements of stack B up by 1. The first element becomes the last one.
+- [x] `rr`: `ra` and `rb` at the same time.
+- [x] `rra` **(reverse rotate A)**: Shift all elements of stack A down by 1. The last element becomes the first one.
+- [x] `rrb` **(reverse rotate B)**: Shift all elements of stack b down by 1. The last element becomes the first one.
+- [x] `rrr`: `rra` and `rrb` at the same time.
 
 #### GRADE
 > The grade depends on how efficient the program's sorting process is.
  
-* Sorting **3 values**: no more than **3 actions**.
-* Sorting **5 values**: no more than **12 actions**.
-* Sorting **100 values**: **rating from 1 to 5 points** depending on the number of actions:
+- [x] Sorting **3 values**: no more than **3 actions**.
+- [x] Sorting **5 values**: no more than **12 actions**.
+- [x] Sorting **100 values**: **rating from 1 to 5 points** depending on the number of actions:
 
-  * **5 points** for less than **700 actions**;
-  * **4 points** for less than **900 actions**;
-  * **3 points** for less than **1100 actions**;
-  * **2 points** for less than **1300 actions**;
-  * **1 point** for less than **1500 actions**;
-* Sorting **500 values**: **rating from 1 to 5 points** depending on the number of actions:
+   - [ ] **5 points** for less than **700 actions**.
+   - [ ] **4 points** for less than **900 actions**.
+   - [x] **3 points** for less than **1100 actions**.
+   - [x] **2 points** for less than **1300 actions**.
+   - [x] **1 point** for less than **1500 actions**.
+- [x] Sorting **500 values**: **rating from 1 to 5 points** depending on the number of actions:
 
-  * **5 points** for less than **5500 actions**;
-  * **4 points** for less than **7000 actions**;
-  * **3 points** for less than **8500 actions**;
-  * **2 points** for less than **10000 actions**;
-  * **1 point** for less than **11500 actions**;
+   - [ ] **5 points** for less than **5500 actions**.
+   - [x] **4 points** for less than **7000 actions**.
+   - [x] **3 points** for less than **8500 actions**.
+   - [x] **2 points** for less than **10000 actions**.
+   - [x] **1 point** for less than **11500 actions**.
 
-> Note: Validating the project requires at least 80/100.  I belive 3 points in 100 & 500 would be 80/80.
+> Note: Validating the project requires at least 80/100. I believe 3 points with 100 and 500 numbers would be 80/100.
 
 #### ERROR MANAGEMENT
 > The program should print `Error` + `\n` if the following tests are made:
 
-* Non numeric parameters;
-* Duplicate numeric parameter;
-* Numeric parameter greater than INT_MAX;
-* Numeric parameter less than INT_MIN;
+- [x] Non-numeric parameters.
+- [x] Duplicate numeric parameter.
+- [x] Numeric parameter greater than INT_MAX.
+- [x] Numeric parameter less than INT_MIN.
 
 ```bash
 ./push_swap 4 bb 2
@@ -119,6 +122,10 @@ Possible actions are:
 #### SORTED EXAMPLES
 > Should not print anything if the following tests are made:
 
+- [x] No parameter.
+- [x] Single numeric argument.
+- [x] The numbers are already sorted.
+
 ```bash
 ./push_swap
 ./push_swap 42
@@ -126,24 +133,25 @@ Possible actions are:
 ./push_swap 0 1 2 3 4 5 6 7 8 9
 ```
 
-## DISCLAIMER
+## BONUS
+- [ ] Create a checker for push_swap that will read the program instructions and display `KO` or `OK`.
+
+## NORMINETTE
 At 42 School, it is expected that almost every project is written in accordance with the Norm, which is the coding standard of the school.
 
-```bash
-- No for, do while, switch, case or goto are allowed
-- No more than 25 lines per function and 5 functions per file
+```
+- No for, do...while, switch, case, goto, ternary operators and variable-length arrays are allowed
+- Each function must be a maximum of 25 lines, not counting the function's curly brackets
+- Each line must be at most 80 columns wide, comments included
+- A function can take 4 named parameters maximum
 - No assigns and declarations in the same line (unless static)
-- No more than 5 variables in 1 function
+- You can't declare more than 5 variables per function
 - ...
 ```
 
-<a href="https://github.com/jotavare/jotavare/blob/main/42/pdf/en_norm.pdf">Click here</a> for more information on 42 norms.
-
-## TESTERS
-- [Push Swap Visualizer](https://github.com/o-reo/push_swap_visualizer) `o-reo` `GitHub`
-- [Push Swap Tester](https://github.com/laisarena/push_swap_tester) `laisarena` `GitHub`
-- [Push Swap Leak Tester](https://github.com/IDC87/push_swap_leak_tester) `IDC87` `GitHub`
-- [Push Swap Tester](https://github.com/gemartin99/Push-Swap-Tester) `gemartin99` `GitHub`
+* [42 Norms](https://github.com/jotavare/jotavare/blob/main/42/pdf/en_norm.pdf) - Information about 42 code norms. `PDF`
+* [Norminette](https://github.com/42School/norminette) - Tool by 42, to respect the code norm. `GitHub`
+* [42 Header](https://github.com/42Paris/42header) - 42 header for Vim. `GitHub`
 
 ## LICENSE
 <p>
