@@ -27,7 +27,7 @@ push_swap is a project at 42 that involves developing a sorting algorithm for a 
 <a href="https://github.com/jotavare/push_swap/blob/master/subject/en_subject_push_swap.pdf">Click here</a> for the subject of this project.
 
 ## HOW TO USE
-#### COMPILE AND EXECUTION
+#### COMPILATION AND EXECUTION
 #### 1º - Clone the repository
 ```bash
 git clone git@github.com:jotavare/push_swap.git
