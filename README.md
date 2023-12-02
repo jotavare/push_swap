@@ -66,7 +66,7 @@ ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 
 ## MANDATORY
 #### RULES
-> The program is only allowed two stacks to work with, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
+> The program is only allowed to work with two stacks, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
 
 Possible actions:
 
