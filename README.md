@@ -27,7 +27,6 @@ In this project, I developed a sorting algorithm for a specific problem using tw
 <a href="https://github.com/jotavare/push_swap/blob/master/subject/en_subject_push_swap.pdf">Click here</a> for the subject of this project.
 
 ## HOW TO USE
-#### COMPILATION AND EXECUTION
 #### 1º - Clone the repository
 ```bash
 git clone git@github.com:jotavare/push_swap.git
