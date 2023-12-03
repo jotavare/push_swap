@@ -22,12 +22,12 @@
 </p>
 
 ## ABOUT
-push_swap is a project at 42 that involves developing a sorting algorithm for a specific problem using two stacks. The goal of the project is to efficiently sort a stack of integers using a set of predefined operations.
+In this project, I developed a sorting algorithm for a specific problem using two stacks. The goal of the project is to efficiently sort a stack of integers using a set of predefined operations.
 
-<a href="https://github.com/jotavare/push_swap/blob/master/subject/en_subject_push_swap.pdf">Click here</a> for the subject of this project.
+- [Subject](https://github.com/jotavare/push_swap/blob/master/subject/en_subject_push_swap.pdf) `PDF`
+- [References](https://github.com/jotavare/42-resources#02-push_swap) `GitHub`
 
 ## HOW TO USE
-#### COMPILATION AND EXECUTION
 #### 1º - Clone the repository
 ```bash
 git clone git@github.com:jotavare/push_swap.git
@@ -66,10 +66,9 @@ ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 
 ## MANDATORY
 #### RULES
-> The program is only allowed two stacks to work with, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
+> The program is only allowed to work with two stacks, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
 
 Possible actions:
-
 - [x] `pa` **(push A)**: Take the first element at the top of B and put it at the top of A. Do nothing if B is empty.
 - [x] `pb` **(push B)**: Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
 - [x] `sa` **(swap A)**: Swap the first 2 elements at the top of stack A. Do nothing if there are only one or no elements.
@@ -77,10 +76,10 @@ Possible actions:
 - [x] `ss`: `sa` and `sb` at the same time.
 - [x] `ra` **(rotate A)**: Shift all elements of stack A up by 1. The first element becomes the last one.
 - [x] `rb` **(rotate B)**: Shift all elements of stack B up by 1. The first element becomes the last one.
-- [x] `rr`: `ra` and `rb` at the same time.
+- [x] `rr` : `ra` and `rb` at the same time.
 - [x] `rra` **(reverse rotate A)**: Shift all elements of stack A down by 1. The last element becomes the first one.
 - [x] `rrb` **(reverse rotate B)**: Shift all elements of stack b down by 1. The last element becomes the first one.
-- [x] `rrr`: `rra` and `rrb` at the same time.
+- [x] `rrr` : `rra` and `rrb` at the same time.
 
 #### GRADE
 > The grade depends on how efficient the program's sorting process is.
