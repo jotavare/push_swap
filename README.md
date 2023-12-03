@@ -80,8 +80,8 @@ Possible actions:
 | `ra` **(rotate A)**          | Shift all elements of stack A up by 1. The first element becomes the last one. |
 | `rb` **(rotate B)**          | Shift all elements of stack B up by 1. The first element becomes the last one. |
 | `rr`                         | `ra` and `rb` at the same time. |
-| `rra` **(reverse rotate A)** | Shift all elements of stack A down by 1. The last element becomes the first one. |
-| `rrb` **(reverse rotate B)** | Shift all elements of stack b down by 1. The last element becomes the first one. |
+| `rra` **(reverse rot A)** | Shift all elements of stack A down by 1. The last element becomes the first one. |
+| `rrb` **(reverse rot B)** | Shift all elements of stack b down by 1. The last element becomes the first one. |
 | `rrr`                        | `rra` and `rrb` at the same time. |
 
 #### GRADE
