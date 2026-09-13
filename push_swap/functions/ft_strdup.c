@@ -28,6 +28,5 @@ char	*ft_strdup(const char *s)
 	if (s_alloc == NULL)
 		return (NULL);
 	ft_memcpy(s_alloc, s, len);
-	free (s_alloc);
 	return (s_alloc);
 }

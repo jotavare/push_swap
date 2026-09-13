@@ -6,8 +6,8 @@
 	<img src="https://img.shields.io/badge/status-finished-success?color=%2312bab9&style=flat-square" />
 	<img src="https://img.shields.io/badge/evaluated-03%20%2F%2004%20%2F%202023-success?color=%2312bab9&style=flat-square" />
 	<img src="https://img.shields.io/badge/score-84%20%2F%20100-success?color=%2312bab9&style=flat-square" />
-	<img src="https://img.shields.io/github/languages/top/jotavare/libft?color=%2312bab9&style=flat-square" />
-	<img src="https://img.shields.io/github/last-commit/jotavare/libft?color=%2312bab9&style=flat-square" />
+	<img src="https://img.shields.io/github/languages/top/jotavare/push_swap?color=%2312bab9&style=flat-square" />
+	<img src="https://img.shields.io/github/last-commit/jotavare/push_swap?color=%2312bab9&style=flat-square" />
 	<a href='https://www.linkedin.com/in/jotavare' target="_blank"><img alt='Linkedin' src='https://img.shields.io/badge/LinkedIn-blue?style=flat-square'/></a>
 	<a href='https://profile.intra.42.fr/users/jotavare' target="_blank"><img alt='42' src='https://img.shields.io/badge/Porto-100000?style=flat-square&logo=42&logoColor=white&labelColor=000000&color=000000'/></a>
 </p>
@@ -18,12 +18,16 @@
 	<a href="#mandatory">Mandatory</a> •
 	<a href="#bonus">Bonus</a> •
 	<a href="#norminette">Norminette</a> •
+	<a href="#debugging">Debugging</a> •
 	<a href="#contributing">Contributing</a> •
 	<a href="#license">License</a>
 </p>
 
 ## ABOUT
 In this project, I developed a sorting algorithm for a specific problem using two stacks. The goal of the project is to efficiently sort a stack of integers using a set of predefined operations.
+
+> [!NOTE]
+> For the rest of the projects and exams in the cursus, <a href="https://github.com/jotavare/42-common-core">click here</a>.
 
 ## HOW TO USE
 #### 1º - Clone the repository
@@ -36,30 +40,41 @@ cd push_swap/push_swap
 make
 ```
 #### 3º - Run the code
-> If you have problems running the `./checker`, use `chmod 777 ./checker` and try again.
 ```bash
-./push_swap [numbers] | ./checker [numbers]
-./push_swap 9 0 -217 2147483647 -2147483648 | ./checker 9 0 -217 2147483647 -2147483648
+./push_swap [numbers]
+./push_swap 9 0 -217 2147483647 -2147483648
 ```
+
+Counting the operations for a given input:
+```bash
+./push_swap 9 0 -217 2147483647 -2147483648 | wc -l
+```
+
 #### 4º - Assign numbers to a variable and run the code
 ```bash
-ARG=["numbers"]; ./push_swap $ARG | ./checker $ARG
-ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
+ARG="3 0 9 2 -1"; ./push_swap $ARG
+```
+
+#### 5º - Check the result
+The bonus `checker` was not done, so this repository does not ship one. To
+verify the output, use the `checker_linux` binary provided with the subject:
+```bash
+ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker_linux $ARG
 ```
 
 #### MAKEFILE RULES
 
-`make` - Compile push_swap **mandatory** functions.
+`make` - Compile `push_swap.a` and the `push_swap` executable.
 
-`make bonus` - Compile push_swap **bonus** functions.
+`make all` - Same as `make`.
 
-`make all` - Compile **mandatory** + **bonus** functions.
+`make clean` - Delete the `objects` directory.
 
-`make clean` - Delete all .o (object files) files.
-
-`make fclean` - Delete all .o (object files) and .a (executable) files.
+`make fclean` - Delete the object files, `push_swap.a` and the executable.
 
 `make re` - Use rules `fclean` + `all`.
+
+`make debug` - Rebuild with `-g3 -fsanitize=address` for use with gdb and AddressSanitizer.
 
 
 ## MANDATORY
@@ -150,10 +165,31 @@ Possible actions:
 * [Norminette](https://github.com/42School/norminette) - Tool to respect the code norm, made by 42. `GitHub`
 * [42 Header](https://github.com/42Paris/42header) - 42 header for Vim. `GitHub`
 
+## DEBUGGING
+> Sorting works through a linked list that is allocated once and rearranged
+> throughout, so every node has to be freed on both the success and the error
+> path.
+
+Build with the sanitizer and debug symbols:
+
+```bash
+make debug
+```
+
+`gdb --args ./push_swap 3 0 9 2 -1` - Step through parsing and the radix passes.
+
+`valgrind --leak-check=full ./push_swap 3 0 9 2 -1` - Report anything the free path missed.
+
+`valgrind --track-origins=yes ./push_swap 3 0 9 2 -1` - Trace an uninitialised value back to where it came from.
+
+* [GDB](https://www.sourceware.org/gdb/) - The GNU debugger. `Website`
+* [Valgrind](https://valgrind.org/docs/manual/quick-start.html) - Quick start guide. `Website`
+
 ## CONTRIBUTING
 
-If you find any issues or have suggestions for improvements, feel free to fork the repository and open an issue or submit a pull request.
+This repository documents work already submitted and graded, so it is not open
+to changes. Feel free to fork it if any of it is useful to you.
 
 ## LICENSE
 
-This project is available under the MIT License. For further details, please refer to the [LICENSE](https://github.com/jotavare/push_swap/blob/master/LICENSE) file.
+This project is available under the MIT License. For further details, please refer to the [LICENSE](https://github.com/jotavare/push_swap/blob/main/LICENSE) file.

@@ -58,6 +58,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		count++;
 	}
 	tab[count] = '\0';
-	free (tab);
 	return (tab);
 }

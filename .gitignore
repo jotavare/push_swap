@@ -1,3 +1,22 @@
+# Build output.
+*.o
+*.a
 *.out
-*.pdf
+push_swap/objects/
+push_swap/push_swap
+
+# Editor and OS droppings.
+.vscode/
+.idea/
 *.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Never commit credentials.
+.env
+.env.*
+*.pem
+*.key
+
+*.pdf

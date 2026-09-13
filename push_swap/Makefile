@@ -11,11 +11,12 @@
 # **************************************************************************** #
 
 # BASIC
-CC = cc -g
-CFLAGS = -Wall -Wextra -Werror -g3
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+DEBUG =
 RM = rm -rf
 GDB = gdb
-VAL = valgrind --leak-check=full --track-origin=yes
+VAL = valgrind --leak-check=full --track-origins=yes
 
 #colors
 RESET			:= \033[0m
@@ -66,11 +67,11 @@ $(NAME): $(OBJS)
 	
 $(OBJSDIR)/%.o: %.c
 	mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
 push_swap: $(PUSH_SWAP_OBJ) $(NAME)
 	@echo "$(GREEN)$(BOLD)Creating executable...$(RESET)"
-	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJ) $(NAME) -o push_swap
+	$(CC) $(CFLAGS) $(DEBUG) $(PUSH_SWAP_OBJ) $(NAME) -o push_swap
 	@echo "$(GREEN)$(BOLD)Executable created!$(RESET)"
 
 clean:
@@ -85,5 +86,10 @@ fclean: clean
 
 re: fclean all
 	@echo "$(GREEN)$(BOLD)Recompiled successfully!$(RESET)"
+
+debug: fclean
+	@$(MAKE) DEBUG="-g3 -fsanitize=address" all
+
+.PHONY: all clean fclean re debug
 
 .SILENT:
