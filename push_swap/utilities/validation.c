@@ -85,11 +85,14 @@ void	check_args(int argc, char **argv)
 	long	tmp;
 	char	**args;	
 
-	i = 1;
+	i = 0;
 	if (argc == 2)
 		args = argc2(argv[1]);
 	else
+	{
+		i = 1;
 		args = argv;
+	}
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
